@@ -1,7 +1,6 @@
-package ru.petrov;
+package ru.petrov.util;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import ru.petrov.annotations.TrackAsyncTime;
 import ru.petrov.annotations.TrackTime;
 
