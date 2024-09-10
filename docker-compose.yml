@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:15.5
+    environment:
+      POSTGRES_DB: "aop"
+      POSTGRES_USER: "aop"
+      POSTGRES_PASSWORD: "aop"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    ports:
+      - '5433:5432'
+
+#  aop:
+#    image: aop/aop:0.0.1-SNAPSHOT
+#    ports:
+#      - '8080:8080'
+#    environment:
+#      - "SPRING_PROFILES_ACTIVE=dev"
+#    depends_on:
+#      postgres:
+#        condition: service_started

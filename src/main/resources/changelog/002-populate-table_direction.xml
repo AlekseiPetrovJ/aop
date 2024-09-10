@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        logicalFilePath="changelog/changelog.xml">
+
+
+    <changeSet id="1723290651203-1" author="Aleksei Petrov">
+        <insert tableName="track">
+            <column name="id" valueNumeric="1"/>
+            <column name="local_date_time" value="2024-09-10 22:10:44"/>
+            <column name="method_name" value="main"/>
+            <column name="execution_time" value="250000"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1723290651203-2" author="Aleksei Petrov">
+        <insert tableName="track">
+            <column name="id" valueNumeric="2"/>
+            <column name="local_date_time" value="2024-09-10 22:10:44"/>
+            <column name="method_name" value="main"/>
+            <column name="execution_time" value="200000"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1723290651203-3" author="Aleksei Petrov">
+        <insert tableName="track">
+            <column name="id" valueNumeric="3"/>
+            <column name="local_date_time" value="2024-09-10 22:10:44"/>
+            <column name="method_name" value="test"/>
+            <column name="execution_time" value="20000"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
