@@ -1,10 +1,11 @@
 package ru.petrov;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import ru.petrov.annotations.TrackAsyncTime;
 import ru.petrov.annotations.TrackTime;
 
-//@Service
+@Component
 public class DemoClass {
     @TrackTime
     public void demoMethod(int time) {
