@@ -16,9 +16,20 @@ public class DemoClass {
     }
 
     @TrackAsyncTime
+    //    @TrackAsyncTime  //Если установить обе аннотации будет выброшено исключение
     public void demoAsyncMethod(int time) {
         try {
             Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @TrackTime
+    public void demoMethodException(int time) {
+        try {
+            Thread.sleep(time);
+            throw new RuntimeException("some exception from demoMethodException");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

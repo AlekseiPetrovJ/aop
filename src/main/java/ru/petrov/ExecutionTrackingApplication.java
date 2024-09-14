@@ -21,9 +21,13 @@ public class ExecutionTrackingApplication {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void onReady() {
-		Stream.generate(() -> (int) (Math.random() * 100 + 100)).limit(5)
-				.forEach(demoClass::demoAsyncMethod);
-		Stream.generate(() -> (int) (Math.random() * 100 + 100)).limit(5)
+		Stream.generate(() -> 1000).limit(1)
 				.forEach(demoClass::demoMethod);
+		Stream.generate(() -> 1000).limit(2)
+				.forEach(demoClass::demoAsyncMethod);
+		Stream.generate(() -> 1000).limit(1)
+				.forEach(demoClass::demoMethod);
+		Stream.generate(() -> 100).limit(1)
+				.forEach(demoClass::demoMethodException);
 	}
 }
