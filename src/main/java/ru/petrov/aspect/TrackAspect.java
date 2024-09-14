@@ -38,8 +38,6 @@ public class TrackAspect {
     /**
      * При возникновении ошибки внутри joinPoint ошибка не пробрасывается выше,
      * а записывается в БД
-     * @param joinPoint
-     * @return
      */
     private Object saveTrack(ProceedingJoinPoint joinPoint) {
 
@@ -59,11 +57,8 @@ public class TrackAspect {
 
     /**
      * При установке обеих аннотаций одновременно будет выброшено исключение
-     *
-     * @param joinPoint
-     * @throws Exception
      */
-    private void checkForConflicts(JoinPoint joinPoint) throws Exception {
+    private void checkForConflicts(JoinPoint joinPoint) {
         Method method = ((MethodSignature) joinPoint.getSignature()).getMethod();
 
         boolean hasTrackTime = method.isAnnotationPresent(TrackTime.class);
