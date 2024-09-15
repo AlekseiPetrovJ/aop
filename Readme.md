@@ -1,3 +1,4 @@
+[![aop with Maven](https://github.com/AlekseiPetrovJ/aop/actions/workflows/maven.yml/badge.svg)](https://github.com/AlekseiPetrovJ/aop/actions/workflows/maven.yml)
 # Система учета времени выполнения методов
 
 Система учета времени выполнения методов в приложении с использованием Spring AOP.
@@ -5,6 +6,7 @@
 При возникновении исключения в наблюдаемом методе в логе регистрируется текст исключения.
 Логи сохраняются в БД postgresql.
 Реализован REST контроллер для просмотра логов.
+Настроен CI-пайплайн в git на сборку.
 
 # Запуск приложения
 ## Требования
