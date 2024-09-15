@@ -19,7 +19,7 @@ spring:
     show-sql: true
   datasource:
     driver: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/aop
+    url: jdbc:postgresql://postgres:5432/aop
     username: aop
     password: aop
   liquibase:

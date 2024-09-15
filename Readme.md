@@ -6,5 +6,27 @@
 Логи сохраняются в БД postgresql.
 Реализован REST контроллер для просмотра логов.
 
+# Запуск приложения
+## Требования
+Установленный maven, docker, docker compose
+
+## Запуск
+1) Скачайте проект из ветки master
+2) в командной строке (cmd/bash) перейдите в каталог проекта
+
+windows: `cd C:\Users\user\Downloads\<КаталогПроекта>`
+
+linux: `cd ~/Downloads/<КаталогПроекта>`
+
+3) Соберите докер образ:
+
+windows: `mvnw.cmd -B clean package dockerfile:build`
+
+linux: `./mvnw -B clean package dockerfile:build`
+
+4) Запуск проекта:
+
+`docker compose up
+`
 ## OpenAPI
 [AOP](http://127.0.0.1:8080/swagger-ui/index.html)
