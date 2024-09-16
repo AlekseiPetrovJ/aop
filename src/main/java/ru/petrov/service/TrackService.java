@@ -2,6 +2,7 @@ package ru.petrov.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import ru.petrov.dto.StatisticTrackDto;
 import ru.petrov.dto.TrackDto;
 import ru.petrov.model.Track;
 
@@ -13,4 +14,6 @@ public interface TrackService {
     Track save(Track track);
     TrackDto findById(Long id);
     Map<String, List<TrackDto>> getTracksGroupedByMethodName();
+
+    List<StatisticTrackDto> getStatisticTrack();
 }

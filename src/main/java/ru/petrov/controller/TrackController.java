@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.petrov.dto.StatisticTrackDto;
 import ru.petrov.dto.TrackDto;
 import ru.petrov.model.exception.TrackNotFound;
 import ru.petrov.service.TrackService;
@@ -53,5 +54,14 @@ public class TrackController {
     @GetMapping("/grouped")
     public ResponseEntity<Map<String, List<TrackDto>>> getTracksGroupedByMethodName() {
         return new ResponseEntity<>(trackService.getTracksGroupedByMethodName(), HttpStatus.OK);
+    }
+
+    @Operation(summary = "Получить статистику по замерам", description = """
+            Возвращаются min, max, avr, count для группировки по имени метода.
+            """)
+
+    @GetMapping("/statistic")
+    public ResponseEntity<List<StatisticTrackDto>> getStatistic() {
+        return new ResponseEntity<>(trackService.getStatisticTrack(), HttpStatus.OK);
     }
 }

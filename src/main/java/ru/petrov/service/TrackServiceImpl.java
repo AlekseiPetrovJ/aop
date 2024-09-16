@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.petrov.dto.StatisticTrackDto;
 import ru.petrov.dto.TrackDto;
 import ru.petrov.model.Track;
 import ru.petrov.model.exception.TrackNotFound;
@@ -43,5 +44,10 @@ public class TrackServiceImpl implements TrackService {
                 .stream().map(track -> modelMapper.map(track, TrackDto.class))
                 .collect(Collectors.groupingBy(TrackDto::getMethodName));
     }
+
+    public List<StatisticTrackDto> getStatisticTrack() {
+        return trackRepository.getStatisticTrack().stream().toList();
+    }
+
 
 }
